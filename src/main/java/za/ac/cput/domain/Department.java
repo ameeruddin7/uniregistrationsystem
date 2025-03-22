@@ -1,3 +1,6 @@
+2309190839
+Ameeruddin Arai
+
 package za.ac.cput.domain;
 
 public class Department {
@@ -7,9 +10,9 @@ public class Department {
     private String faculty;
     private List<Student> students;
     
-    private Department3() {}
+    private Department() {}
     
-    private Department3(Builder builder) {
+    private Department(Builder builder) {
         this.departmentId = builder.departmentId;
         this.departmentName = builder.departmentName;
         this.faculty = builder.faculty;
