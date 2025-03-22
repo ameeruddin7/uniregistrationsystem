@@ -13,7 +13,7 @@ public class StudentRepository implements IStudentRepository {
     private List<Student> studentList;
 
     private StudentRepository() {
-        studentList = new ArrayList<Student>();  // In-memory list for storing students
+        studentList = new ArrayList<Student>();
     }
 
     public static IStudentRepository getRepository() {
