@@ -37,7 +37,7 @@ public class Department {
     
     @Override
     public String toString() {
-        return "Department3{" +
+        return "Department{" +
                 "departmentId='" + departmentId + '\'' +
                 ", departmentName='" + departmentName + '\'' +
                 ", faculty='" + faculty + '\'' +
@@ -71,7 +71,7 @@ public class Department {
             return this;
         }
         
-        public Builder copy(Department3 department) {
+        public Builder copy(Department department) {
             this.departmentId = department.departmentId;
             this.departmentName = department.departmentName;
             this.faculty = department.faculty;
@@ -79,8 +79,8 @@ public class Department {
             return this;
         }
         
-        public Department3 build() {
-            return new Department3(this);
+        public Department build() {
+            return new Department(this);
         }
     }
 }
