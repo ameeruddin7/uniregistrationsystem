@@ -11,7 +11,7 @@ import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Course;
 import java.util.List;
 
-public class LecturerFactory {
+public class  LecturerFactory {
     public static Lecturer createLecturer(String lecturerId, String firstName, String lastName, String email, Department department,
                                           List<Course> assignedCourses) {
         if (lecturerId == null || lecturerId.isEmpty() || firstName == null || firstName.isEmpty() ||

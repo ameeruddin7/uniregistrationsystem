@@ -13,7 +13,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class LecturerFactoryTest {
+public class  LecturerFactoryTest {
     private static Department department;
     private static Lecturer l1;
     private static Lecturer l2;
