@@ -1,3 +1,6 @@
+//name: Gabriel Martin
+// surname: Kiewietz
+// student no. : 230990703
 package za.ac.cput.repository;
 import za.ac.cput.domain.registration;
 import java.util.HashSet;
