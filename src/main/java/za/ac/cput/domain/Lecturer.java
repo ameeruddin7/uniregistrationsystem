@@ -41,7 +41,7 @@ public class Lecturer {
     public String getEmail() {
         return email;
     }
-    public Department getDepartment() {
+    public Department getDepartment()  {
         return department;
     }
     public List<Course> getAssignedCourses() {

@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 
 class LecturerRepositoryTest {
-    private static Department department;
+    private static  Department department;
     private static List<Course> assignedCourses;
 
     private static ILecturerRepository repository = LecturerRepository.getRepository();

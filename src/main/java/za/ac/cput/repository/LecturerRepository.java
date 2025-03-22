@@ -15,7 +15,7 @@ public class LecturerRepository implements ILecturerRepository {
 
     private LecturerRepository() { lecturerList = new ArrayList<>();}
 
-    public static ILecturerRepository getRepository() {
+    public static ILecturerRepository  getRepository() {
         if (repository == null) {
             repository = new LecturerRepository();
         }
