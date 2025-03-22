@@ -14,7 +14,8 @@ public class StudentFactory {
         if (studentId == null || studentId.isEmpty() ||
                 firstName == null || firstName.isEmpty() ||
                 lastName == null || lastName.isEmpty() ||
-                email == null || email.isEmpty()) {
+                email == null || email.isEmpty() ||
+                department == null || registeredCourses == null) {
             return null;
         }
 
@@ -28,8 +29,8 @@ public class StudentFactory {
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)
-                .setDepartment(department) // Can be null
-                .setRegisteredCourses(registeredCourses) // Can be null
+                .setDepartment(department)
+                .setRegisteredCourses(registeredCourses)
                 .build();
     }
 }
