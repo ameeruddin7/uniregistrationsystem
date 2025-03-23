@@ -4,78 +4,88 @@
 
 package za.ac.cput.domain;
 
-public class Registration {
-  private String registrationId;
-    private String studentId;
-    private String courseId;
-    private String registrationDate;
+import java.time.LocalDate;
+import java.util.Objects;
 
-   
-    private Registration(za.ac.cput.Registration.Builder builder) {
-        this.registrationId = builder.registrationId;
-        this.studentId = builder.studentId;
-        this.courseId = builder.courseId;
+public class Registration {
+    private String registrationID;
+    private Student student;
+    private Course course;
+    private LocalDate registrationDate;
+
+    private Registration() {}
+
+    private Registration(Builder builder) {
+        this.registrationID = builder.registrationID;
+        this.student = builder.student;
+        this.course = builder.course;
         this.registrationDate = builder.registrationDate;
     }
 
-    
-    public String getRegistrationId() { return registrationId; }
-    public String getStudentId() { return studentId; }
-    public String getCourseId() { return courseId; }
-    public String getRegistrationDate() { return registrationDate; }
-
-    
-    public static class Builder {
-        private String registrationId;
-        private String studentId;
-        private String courseId;
-        private String registrationDate;
-
-        public za.ac.cput.Registration.Builder setRegistrationId(String registrationId) {
-            this.registrationId = registrationId;
-            return this;
-        }
-
-        public za.ac.cput.Registration.Builder setStudentId(String studentId) {
-            this.studentId = studentId;
-            return this;
-        }
-
-        public za.ac.cput.Registration.Builder setCourseId(String courseId) {
-            this.courseId = courseId;
-            return this;
-        }
-
-        public za.ac.cput.Registration.Builder setRegistrationDate(String registrationDate) {
-            this.registrationDate = registrationDate;
-            return this;
-        }
-
-        public za.ac.cput.Registration build() {
-            return new za.ac.cput.Registration(this);
-        }
-    }
+    public String getRegistrationID() { return registrationID; }
+    public Student getStudent() { return student; }
+    public Course getCourse() { return course; }
+    public LocalDate getRegistrationDate() { return registrationDate; }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        za.ac.cput.Registration that = (za.ac.cput.Registration) o;
-        return Objects.equals(registrationId, that.registrationId);
+        Registration that = (Registration) o;
+        return Objects.equals(registrationID, that.registrationID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(registrationId);
+        return Objects.hash(registrationID);
     }
 
     @Override
     public String toString() {
         return "Registration{" +
-                "registrationId='" + registrationId + '\'' +
-                ", studentId='" + studentId + '\'' +
-                ", courseId='" + courseId + '\'' +
-                ", registrationDate='" + registrationDate + '\'' +
+                "registrationID='" + registrationID + '\'' +
+                ", student=" + student +
+                ", course=" + course +
+                ", registrationDate=" + registrationDate +
                 '}';
+    }
+
+    public static class Builder {
+        private String registrationID;
+        private Student student;
+        private Course course;
+        private LocalDate registrationDate;
+
+        public Builder setRegistrationID(String registrationID) {
+            this.registrationID = registrationID;
+            return this;
+        }
+
+        public Builder setStudent(Student student) {
+            this.student = student;
+            return this;
+        }
+
+        public Builder setCourse(Course course) {
+            this.course = course;
+            return this;
+        }
+
+        public Builder setRegistrationDate(LocalDate registrationDate) {
+            this.registrationDate = registrationDate;
+            return this;
+        }
+
+        public Builder copy(Registration registration) {
+            this.registrationID = registration.registrationID;
+            this.student = registration.student;
+            this.course = registration.course;
+            this.registrationDate = registration.registrationDate;
+            return this;
+        }
+
+        public Registration build() {
+            return new Registration(this);
+        }
     }
 }
