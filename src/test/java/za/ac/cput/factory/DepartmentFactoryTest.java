@@ -12,8 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DepartmentFactoryTest {
+
     private static Department d1;
     private static Department d2;
+
     private static List<Course> departmentCourses;
 
     @BeforeAll

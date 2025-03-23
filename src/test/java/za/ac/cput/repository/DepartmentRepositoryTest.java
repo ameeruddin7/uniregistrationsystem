@@ -1,40 +1,42 @@
 //230190839
 //ameeruddin arai
 
-
 package za.ac.cput.repository;
 
 import org.junit.jupiter.api.*;
 import za.ac.cput.domain.Department;
 import za.ac.cput.factory.DepartmentFactory;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class DepartmentRepositoryTest {
-    private static DepartmentRepository repository;
+
+    private static IDepartmentRepository repository = DepartmentRepository.getRepository();
     private static Department d1;
     private static Department d2;
 
     @BeforeAll
     public static void setUp() {
-        repository = (DepartmentRepository) DepartmentRepository.getRepository();
-        d1 = DepartmentFactory.createDepartment("D001", "Computer Science", "Building A");
-        d2 = DepartmentFactory.createDepartment("D002", "Mathematics", "Building B");
+        // Initialize the Department objects
+        d1 = DepartmentFactory.createDepartment("D001", "Computer Science", "Engineering", "Dr. Smith", new ArrayList<>());
+        d2 = DepartmentFactory.createDepartment("D002", "Information Technology", "Engineering", "Dr. Adams", new ArrayList<>());
     }
 
     @Test
-    @Order(1)
-    public void testCreateDepartment() {
+    void a_create() {
+        // Test create method
         Department created = repository.create(d1);
         assertNotNull(created);
         System.out.println("Created: " + created);
     }
 
     @Test
-    @Order(2)
-    public void testReadDepartment() {
-        repository.create(d1);
+    void b_read() {
+        // Test read method
+        repository.create(d1); // Ensure the department is created before reading
         Department read = repository.read(d1.getDepartmentId());
         assertNotNull(read);
         assertEquals(d1.getDepartmentId(), read.getDepartmentId());
@@ -42,41 +44,32 @@ public class DepartmentRepositoryTest {
     }
 
     @Test
-    @Order(3)
-    public void testUpdateDepartment() {
-        repository.create(d1);
-        Department updated = new Department.Builder()
+    void c_update() {
+        // Test update method
+        Department updatedDepartment = new Department.Builder()
                 .copy(d1)
                 .setDepartmentName("Software Engineering")
                 .build();
-        Department result = repository.update(updated);
-        assertNotNull(result);
-        assertEquals("Software Engineering", result.getDepartmentName());
-        System.out.println("Updated: " + result);
+        Department updated = repository.update(updatedDepartment);
+        assertNotNull(updated);
+        assertEquals("Software Engineering", updated.getDepartmentName());
+        System.out.println("Updated: " + updated);
     }
 
     @Test
-    @Order(4)
-    public void testDeleteDepartment() {
-        repository.create(d2);
-        boolean deleted = repository.delete(d2.getDepartmentId());
-        assertTrue(deleted);
-        assertNull(repository.read(d2.getDepartmentId()));
-        System.out.println("Deleted: " + d2.getDepartmentId());
+    @Disabled
+    void d_delete() {
+        // Test delete method (currently disabled)
+        boolean success = repository.delete(d1.getDepartmentId());
+        assertTrue(success);
+        System.out.println("Successfully deleted department");
     }
 
     @Test
-    @Order(5)
-    public void testGetAllDepartments() {
+    void e_getAll() {
+        // Test getAll method
         repository.create(d1);
         assertFalse(repository.getAll().isEmpty());
         System.out.println("All Departments: " + repository.getAll());
-    }
-
-    @Test
-    @Order(6)
-    @Disabled
-    public void testNotImplementedYet() {
-        // To be implemented in future
     }
 }

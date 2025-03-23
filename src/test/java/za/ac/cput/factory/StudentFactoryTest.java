@@ -14,6 +14,7 @@ public class StudentFactoryTest {
 
     private static Department department;
     private static List<Course> registeredCourses;
+
     private static Student s1;
     private static Student s2;
     private static Student s3;
