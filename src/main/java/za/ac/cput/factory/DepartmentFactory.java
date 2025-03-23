@@ -1,6 +1,6 @@
 //230190839
 //ameeruddin arai
-
+package za.ac.cput.factory;
 
 import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Course;
