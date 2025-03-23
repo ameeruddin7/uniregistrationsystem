@@ -7,6 +7,7 @@ import za.ac.cput.domain.Student;
 import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Course;
 import java.util.List;
+import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -20,6 +21,10 @@ public class StudentFactoryTest {
     private static Student s3;
 
     static {
+        department = new Department();
+        registeredCourses = new ArrayList<>();
+        registeredCourses.add(new Course());
+
         s1 = StudentFactory.createStudent("2023001", "Devi", "Shakur", "devi@cput.ac.za", department, registeredCourses);
         s2 = StudentFactory.createStudent("2023002", "Paxton", "Andrews", "paxton@cput.ac.za", department, registeredCourses);
         s3 = StudentFactory.createStudent("2023003", "Aria", "Montgomery", "aria@cput.ac.za", department, registeredCourses);

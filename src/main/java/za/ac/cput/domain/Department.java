@@ -12,18 +12,18 @@ public class Department {
    private String headOfDepartment;
    private List<Course> departmentCourses;
 
-   private Department() {
+   public Department() {
    }
 
   private Department(Builder builder) {
       this.departmentId = builder.departmentId;
       this.departmentName = builder.departmentName;
-        this.faculty = builder.faculty;
+      this.faculty = builder.faculty;
       this.headOfDepartment = builder.headOfDepartment;
-        this.departmentCourses = builder.departmentCourses;
+      this.departmentCourses = builder.departmentCourses;
   }
 
-    public String getDepartmentId() {
+   public String getDepartmentId() {
        return departmentId;
    }
 
@@ -56,10 +56,10 @@ public class Department {
 
    public static class Builder {
         private String departmentId;
-      private String departmentName;
+        private String departmentName;
         private String faculty;
-       private String headOfDepartment;
-      private List<Course> departmentCourses;
+        private String headOfDepartment;
+        private List<Course> departmentCourses;
 
        public Builder setDepartmentId(String departmentId) {
           this.departmentId = departmentId;
@@ -88,10 +88,10 @@ public class Department {
 
         public Builder copy(Department department) {
            this.departmentId = department.departmentId;
-          this.departmentName = department.departmentName;
-          this.faculty = department.faculty;
-          this.headOfDepartment = department.headOfDepartment;
-         this.departmentCourses = department.departmentCourses;
+           this.departmentName = department.departmentName;
+           this.faculty = department.faculty;
+           this.headOfDepartment = department.headOfDepartment;
+           this.departmentCourses = department.departmentCourses;
           return this;
       }
 

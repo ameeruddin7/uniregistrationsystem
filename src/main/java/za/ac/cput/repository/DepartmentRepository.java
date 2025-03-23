@@ -13,7 +13,7 @@ public class DepartmentRepository implements IDepartmentRepository {
     private List<Department> departmentList;
 
     private DepartmentRepository() {
-        departmentList = new ArrayList<>();
+        departmentList = new ArrayList<Department>();
     }
 
     public static IDepartmentRepository getRepository() {

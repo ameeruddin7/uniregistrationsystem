@@ -14,12 +14,14 @@ public class StudentFactory {
                 firstName == null || firstName.isEmpty() ||
                 lastName == null || lastName.isEmpty() ||
                 email == null || email.isEmpty() ||
-                department == null || registeredCourses == null) {
+                department == null || registeredCourses == null || registeredCourses.isEmpty()) {
+            System.out.println("Validation failed: Missing required fields.");
             return null;
         }
 
         // Email validation
         if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            System.out.println("Validation failed: Invalid email format.");
             return null;
         }
 
