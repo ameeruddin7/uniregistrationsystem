@@ -1,63 +1,68 @@
 //name: Gabriel Martin
 // surname: Kiewietz
 // student no. : 230990703
+
 package za.ac.cput.repository;
-import za.ac.cput.domain.registration;
-import java.util.HashSet;
-import java.util.Set;
 
-public class RegistrationRepositoryimpl implements IRegistrationRepository <Registration, String> {
-    private static RegistrationRepositoryimpl repository = null;
-    private Set<Registration> registrationDB = null;
+import za.ac.cput.domain.Registration;
+import java.util.ArrayList;
+import java.util.List;
 
-    private RegistrationRepositoryimpl() {
-        this.registrationDB = new HashSet<>();
+public class RegistrationRepository implements IRegistrationRepository {
+
+    private static IRegistrationRepository repository = null;
+    private List<Registration> registrationList;
+
+    private RegistrationRepository() {
+        registrationList = new ArrayList<>();
     }
 
-    public static RegistrationRepositoryimpl getRepository() {
-        if (repository == null) repository = new RegistrationRepositoryimpl();
+    public static IRegistrationRepository getRepository() {
+        if (repository == null) {
+            repository = new RegistrationRepository();
+        }
         return repository;
     }
 
     @Override
     public Registration create(Registration registration) {
-        boolean success = this.registrationDB.add(registration);
-        if (!success)
-            return null;
-        return registration;
+        boolean success = registrationList.add(registration);
+        return success ? registration : null;
     }
 
     @Override
-    public Registration read(String studentId) {
-        // replaced with better approach
-        for (Registration r: registrationDB) {
-            if (r.getStudentId().equals(studentId)) return r;
+    public Registration read(String id) {
+        for (Registration r : registrationList) {
+            if (r.getRegistrationID().equals(id)) {
+                return r;
+            }
         }
         return null;
     }
 
     @Override
     public Registration update(Registration registration) {
-        Registration oldRegistration = read(registration.getStudentId());
-        if (oldRegistration != null) {
-            this.registrationDB.remove(oldRegistration);
-            this.registrationDB.add(registration);
+        Registration oldRegistration = read(registration.getRegistrationID());
+        if (oldRegistration == null)
+            return null;
+
+        boolean success = delete(oldRegistration.getRegistrationID());
+        if (success) {
+            registrationList.add(registration);
             return registration;
         }
         return null;
     }
 
     @Override
-    public boolean delete(String studentId) {
-        Registration registrationToDelete = read(studentId);
-        if (registrationToDelete == null)
-            return false;
-        this.registrationDB.remove(registrationToDelete);
-        return true;
+    public boolean delete(String id) {
+        Registration registrationToDelete = read(id);
+        return registrationToDelete != null && registrationList.remove(registrationToDelete);
     }
 
     @Override
-    public Set<Registration> getAll() {
-        return this.registrationDB;
+    public List<Registration> getAll() {
+        return registrationList;
     }
 }
+
