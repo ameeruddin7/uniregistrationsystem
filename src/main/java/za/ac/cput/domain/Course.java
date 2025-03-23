@@ -14,7 +14,7 @@ public class Course {
     private List<Student> enrolledStudents;
 
 
-    private Course() {
+    public Course() {
     }
 
     private Course(Builder builder) {
