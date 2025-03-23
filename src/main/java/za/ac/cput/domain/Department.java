@@ -1,14 +1,13 @@
 //230190839
 //ameeruddin arai
 
-
 package za.ac.cput.domain;
 
 import java.util.List;
 
 public class Department {
    private String departmentId;
-  private String departmentName;
+   private String departmentName;
    private String faculty;
    private String headOfDepartment;
    private List<Course> departmentCourses;
