@@ -1,11 +1,10 @@
+//Gabriel Kiewietz
+// 230990703
 package za.ac.cput.repository;
 
-import java.util.Set;
+import za.ac.cput.domain.Registration;
+import java.util.List;
 
-public interface IRegistrationRepository<T, ID> {
-    T create(T t);
-    T read(ID id);
-    T update(T t);
-    boolean delete(ID id);
-    Set<T> getAll();
+public interface IRegistrationRepository extends IRepository<Registration, String> {
+    List<Registration> getAll();
 }
