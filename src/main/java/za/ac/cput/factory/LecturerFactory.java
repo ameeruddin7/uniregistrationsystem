@@ -2,9 +2,7 @@
 //  Surname: Osman
 //  Student#: 230599125
 
-
 package za.ac.cput.factory;
-
 
 import za.ac.cput.domain.Lecturer;
 import za.ac.cput.domain.Department;

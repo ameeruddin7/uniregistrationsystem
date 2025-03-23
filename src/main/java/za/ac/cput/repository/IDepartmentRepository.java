@@ -9,6 +9,9 @@ import java.util.List;
 
 public interface IDepartmentRepository  extends IRepository<Department,String>{
 
+
     List<Department> getAll();
 
-    List<Department> getall(); }
+    List<Department> getall();
+
+}

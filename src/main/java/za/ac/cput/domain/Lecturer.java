@@ -2,12 +2,9 @@
 //  Surname: Osman
 //  Student#: 230599125
 
-
 package za.ac.cput.domain;
 
 import java.util.List;
-
-
 
 public class Lecturer {
     private String lecturerId;

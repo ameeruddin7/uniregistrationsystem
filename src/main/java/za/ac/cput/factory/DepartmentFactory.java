@@ -1,5 +1,6 @@
 //230190839
 //ameeruddin arai
+
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Department;
@@ -13,7 +14,7 @@ public class DepartmentFactory {
                 departmentName == null || departmentName.isEmpty() ||
                 faculty == null || faculty.isEmpty() ||
                 headOfDepartment == null || headOfDepartment.isEmpty()) {
-            return null; // Prevent creating invalid objects
+            return null;
         }
 
         return new Department.Builder()

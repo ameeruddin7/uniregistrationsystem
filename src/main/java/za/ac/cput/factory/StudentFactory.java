@@ -1,4 +1,4 @@
-  // Saadiqah Hendricks 221095136
+// Saadiqah Hendricks 221095136
 
 package za.ac.cput.factory;
 
@@ -10,7 +10,6 @@ import java.util.List;
 public class StudentFactory {
 
     public static Student createStudent(String studentId, String firstName, String lastName, String email, Department department, List<Course> registeredCourses) {
-        // Null or empty checks
         if (studentId == null || studentId.isEmpty() ||
                 firstName == null || firstName.isEmpty() ||
                 lastName == null || lastName.isEmpty() ||

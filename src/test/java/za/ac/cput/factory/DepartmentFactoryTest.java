@@ -1,20 +1,14 @@
 //230190839
 //ameeruddin arai
 
-
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.*;
 import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Course;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
-
-
-
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DepartmentFactoryTest {
@@ -54,7 +48,7 @@ public class DepartmentFactoryTest {
     @Order(4)
     @Disabled
     public void testNotImplementedYet() {
-        // To do
+        // Todo
     }
 }
 
