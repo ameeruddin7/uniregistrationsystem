@@ -14,9 +14,10 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class  LecturerFactoryTest {
     private static Department department;
+    private static List<Course> assignedCourses;
+
     private static Lecturer l1;
     private static Lecturer l2;
-    private static List<Course> assignedCourses;
 
     static {
         l1 = LecturerFactory.createLecturer("1001", "Tauriq", "Osman", "osmant@cput.ac.za", department, assignedCourses);
