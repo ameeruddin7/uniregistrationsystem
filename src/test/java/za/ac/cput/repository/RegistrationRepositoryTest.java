@@ -59,6 +59,6 @@ class RegistrationRepositoryTest {
     @Test
     void e_getAll() {
         System.out.println("All registrations: " + repository.getAll());
-    }
+     }
 }
 
