@@ -23,7 +23,7 @@ public class StudentFactoryTest {
     static {
         department = new Department();
         registeredCourses = new ArrayList<>();
-        registeredCourses.add(new Course());
+        registeredCourses.add(new Course("IT101", "Introduction to IT"));
 
         s1 = StudentFactory.createStudent("2023001", "Devi", "Shakur", "devi@cput.ac.za", department, registeredCourses);
         s2 = StudentFactory.createStudent("2023002", "Paxton", "Andrews", "paxton@cput.ac.za", department, registeredCourses);

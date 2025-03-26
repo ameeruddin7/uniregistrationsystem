@@ -13,7 +13,7 @@ public class Student {
     private Department department;
     private List<Course> registeredCourses;
 
-    private Student() {
+    public Student(String number, String gabriel, String kiewietz) {
     }
 
     private Student(Builder builder) {
