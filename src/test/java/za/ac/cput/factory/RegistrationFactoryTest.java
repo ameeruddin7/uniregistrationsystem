@@ -50,14 +50,14 @@ public class RegistrationFactoryTest {
     @Test
     @Order(3)
     public void testCreateRegistrationThatFails() {
-        Registration r4 = RegistrationFactory.createRegistration(null, null, null, null);
-        assertNull(r4);
+        Registration reg4 = RegistrationFactory.createRegistration(null, null, null, null);
+        assertNull(reg4);
     }
 
     @Test
     @Order(4)
     @Disabled
     public void testNotImplementedYet() {
-        // Todo: Add future test cases
+         // Todo: Add future test cases
     }
 }

@@ -14,7 +14,7 @@ public class Course {
     private List<Student> enrolledStudents;
 
 
-    public Course() {
+    public Course(String it101, String introductionToIt) {
     }
 
     private Course(Builder builder) {
