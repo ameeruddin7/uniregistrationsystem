@@ -36,15 +36,15 @@ public class RegistrationFactoryTest {
     @Test
     @Order(1)
     public void testCreateRegistration() {
-        assertNotNull(r1);
-        System.out.println(r1.toString());
+        assertNotNull(reg1);
+        System.out.println(reg1.toString());
     }
 
     @Test
     @Order(2)
     public void testCreateRegistrationWithAllAttributes() {
-        assertNotNull(r2);
-        System.out.println(r2.toString());
+        assertNotNull(reg2);
+        System.out.println(reg2.toString());
     }
 
     @Test
