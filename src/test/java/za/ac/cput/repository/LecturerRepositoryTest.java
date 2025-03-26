@@ -12,9 +12,8 @@ import za.ac.cput.domain.Course;
 import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Lecturer;
 import za.ac.cput.factory.LecturerFactory;
-
+import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
@@ -22,6 +21,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class LecturerRepositoryTest {
     private static  Department department;
     private static List<Course> assignedCourses;
+    private static Lecturer l1;
+    private static Lecturer l2;
+
+    static {
+        department = new Department();
+        assignedCourses = new ArrayList<>();
+        assignedCourses.add(new Course("it101", "introductionToit"));
+
+        l1 = LecturerFactory.createLecturer("1001", "Tauriq", "Osman", "osmant@cput.ac.za", department, assignedCourses);
+        l2 = LecturerFactory.createLecturer("1004", "Saadiqah", "Hendricks", "hendrickss@cput.ac.za", department, assignedCourses);
+    }
 
     private static ILecturerRepository repository = LecturerRepository.getRepository();
     private Lecturer lecturer = LecturerFactory.createLecturer("L001", "Tauriq", "Osman", "Osmant@cput.ac.za", department, assignedCourses);
