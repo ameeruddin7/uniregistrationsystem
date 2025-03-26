@@ -1,5 +1,4 @@
 // Saadiqah Hendricks 221095136
-
 package za.ac.cput.repository;
 
 import org.junit.jupiter.api.Disabled;
@@ -16,14 +15,14 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
-
 class StudentRepositoryTest {
+
     private static Department department;
-    private static List<Course> registeredCourses;
+    private static List<Course> registeredcoursesCourses;
 
     private static IStudentRepository repository = StudentRepository.getRepository();
 
-    private Student student = StudentFactory.createStudent("2023001", "Devi", "Shakur", "devi@cput.ac.za",department, registeredCourses);
+    private Student student = StudentFactory.createStudent("2023001", "Aria", "Montgomary", "aria@cput.ac.za", department, registeredcoursesCourses);
 
     @Test
     void a_create() {
@@ -41,7 +40,7 @@ class StudentRepositoryTest {
 
     @Test
     void c_update() {
-        Student newStudent = new Student.Builder().copy(student).setFirstName("D.Shakur").build();
+        Student newStudent = new Student.Builder().copy(student).setFirstName("A.Montgomary").build();
         Student updated = repository.update(newStudent);
         assertNotNull(updated);
         System.out.println(updated.toString());

@@ -1,34 +1,24 @@
-// Saadiqah Hendricks 221095136
-
+//Saadiqah Hendricks 221095136
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.*;
-import za.ac.cput.domain.Student;
-import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Course;
+import za.ac.cput.domain.Department;
+import za.ac.cput.domain.Student;
+
 import java.util.List;
-import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class StudentFactoryTest {
+class StudentFactoryTest {
 
     private static Department department;
     private static List<Course> registeredCourses;
 
-    private static Student s1;
-    private static Student s2;
-    private static Student s3;
-
-    static {
-        department = new Department();
-        registeredCourses = new ArrayList<>();
-        registeredCourses.add(new Course("IT101", "Introduction to IT"));
-
-        s1 = StudentFactory.createStudent("2023001", "Devi", "Shakur", "devi@cput.ac.za", department, registeredCourses);
-        s2 = StudentFactory.createStudent("2023002", "Paxton", "Andrews", "paxton@cput.ac.za", department, registeredCourses);
-        s3 = StudentFactory.createStudent("2023003", "Aria", "Montgomery", "aria@cput.ac.za", department, registeredCourses);
-    }
+    private static Student s1 = StudentFactory.createStudent("2023001", "Aria", "Montgomary", "aria@cput.ac.za", department, registeredCourses);
+    private static Student s2 = StudentFactory.createStudent("2023002", "Hannah", "Marin", "hannah@cput.ac.za", department, registeredCourses);
+    private static Student s3 = StudentFactory.createStudent("2023003", "Caleb", "Peters", "caleb@cput.ac.za", department, registeredCourses);
 
     @Test
     @Order(1)
@@ -48,7 +38,7 @@ public class StudentFactoryTest {
     @Order(3)
     public void testCreateStudentThatFails() {
         // Fail case: Invalid email format
-        Student s4 = StudentFactory.createStudent("2023004", "Caleb", "Peters", "caleb-at-cput-ac-za", department, registeredCourses);
+        Student s4 = StudentFactory.createStudent("2023004", "Toby", "Van Reenen", "toby-at-cput-ac-za", department, registeredCourses);
         assertNull(s4);
     }
 

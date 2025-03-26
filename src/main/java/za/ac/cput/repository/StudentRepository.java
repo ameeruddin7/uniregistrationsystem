@@ -1,8 +1,8 @@
 //Saadiqah Hendricks 221095136
-
 package za.ac.cput.repository;
 
 import za.ac.cput.domain.Student;
+import za.ac.cput.repository.IStudentRepository;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class StudentRepository implements IStudentRepository {
     private List<Student> studentList;
 
     private StudentRepository() {
-        studentList = new ArrayList<Student>();
+        studentList = new ArrayList<Student>();  // In-memory list for storing students
     }
 
     public static IStudentRepository getRepository() {
@@ -69,4 +69,3 @@ public class StudentRepository implements IStudentRepository {
         return studentList;
     }
 }
-

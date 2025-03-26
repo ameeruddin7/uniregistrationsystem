@@ -1,5 +1,4 @@
 //Saadiqah Hendricks 221095136
-
 package za.ac.cput.domain;
 
 import java.util.List;
@@ -13,7 +12,7 @@ public class Student {
     private Department department;
     private List<Course> registeredCourses;
 
-    public Student(String number, String gabriel, String kiewietz) {
+    private Student() {
     }
 
     private Student(Builder builder) {
