@@ -23,7 +23,7 @@ class RegistrationRepositoryTest {
     private static final Registration registration = RegistrationFactory.createRegistration("REG001", student, course, LocalDate.of(2024, 3, 1));
 
     @Test
-    void a_create() {
+     void a_create() {
         Registration created = repository.create(registration);
         assertNotNull(created);
         System.out.println("Created: " + created);
