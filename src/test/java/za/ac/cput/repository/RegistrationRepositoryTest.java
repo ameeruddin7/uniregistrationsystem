@@ -18,7 +18,7 @@ class RegistrationRepositoryTest {
 
     private static final IRegistrationRepository repository = RegistrationRepository.getRepository();
 
-    private static final Student student = new Student("2023001", "Gabriel", "Kiewietz");
+     private static final Student student = new Student("2023001", "Gabriel", "Kiewietz");
     private static final Course course = new Course("IT101", "Introduction to IT");
     private static final Registration registration = RegistrationFactory.createRegistration("REG001", student, course, LocalDate.of(2024, 3, 1));
 
