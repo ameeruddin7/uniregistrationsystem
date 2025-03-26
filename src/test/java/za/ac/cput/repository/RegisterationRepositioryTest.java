@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Registration;
 import za.ac.cput.domain.Student;
 import za.ac.cput.domain.Course;
-import za.ac.cput.repository.RegistrationRepository;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-    public class RegistrationRepositoryTest {
+    class RegisterationRespositoryTest {
         private RegistrationRepository repository;
         private Registration registration;
 
         @BeforeEach
         void setUp() {
-            repository = RegistrationRepository.getRepository();
+            repository = (RegistrationRepository) RegistrationRepository.getRepository();
+
             Student student = new Student("5555", "Dave", "Bakes");
             Course course = new Course("ITC", "Introduction to Course");
             registration = new Registration.Builder()
@@ -64,4 +64,4 @@ import static org.junit.jupiter.api.Assertions.*;
         }
     }
 
-}
+
