@@ -31,7 +31,7 @@ class RegistrationRepositoryTest {
 
     @Test
     void b_read() {
-        Registration read = repository.read(registration.getRegistrationID());
+         Registration read = repository.read(registration.getRegistrationID());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
