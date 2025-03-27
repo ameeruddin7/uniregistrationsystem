@@ -16,7 +16,7 @@ class CourseRepositoryTest {
 
     private static ICourseRepository repository = CourseRepository.getRepository();
 
-    private Course course = CourseFactory.createCourse("2023001", "Application Development", 50 ,null , null, null);
+    private Course course = CourseFactory.createCourse("ADP", "Application Development", 50 ,null , null, null);
 
 
     @Test
