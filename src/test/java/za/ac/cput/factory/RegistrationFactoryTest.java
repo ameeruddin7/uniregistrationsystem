@@ -1,16 +1,17 @@
+// Gabriel Kiewietz 230990703
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.*;
-import za.ac.cput.domain.Registration;
-import za.ac.cput.domain.Student;
 import za.ac.cput.domain.Course;
+import za.ac.cput.domain.Student;
+import za.ac.cput.domain.Registration;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class RegistrationFactoryTest {
+class RegistrationFactoryTest {
 
     private static Student student1;
     private static Student student2;
@@ -23,10 +24,10 @@ public class RegistrationFactoryTest {
 
     @BeforeAll
     static void setUp() {
-        student1 = new Student("2023001", "Gabriel", "Kiewietz");
-        student2 = new Student("2023002", "Ameer", "Arai");
-        course1 = new Course("IT101", "Introduction to IT");
-        course2 = new Course("CS202", "Data Structures");
+        student1 = StudentFactory.createStudent("2023001", "Aria", "Montgomary", "aria@cput.ac.za", null, null);
+        student2 = StudentFactory.createStudent("2023002", "Hannah", "Marin", "hannah@cput.ac.za", null, null);
+        course1 = CourseFactory.createCourse("ADP", "Application Development", 50, null, null, null);
+        course2 = CourseFactory.createCourse("PRM", "Project Management", 40, null, null, null);
 
         reg1 = RegistrationFactory.createRegistration("REG001", student1, course1, LocalDate.of(2024, 3, 1));
         reg2 = RegistrationFactory.createRegistration("REG002", student2, course2, LocalDate.of(2024, 3, 5));
@@ -58,6 +59,6 @@ public class RegistrationFactoryTest {
     @Order(4)
     @Disabled
     public void testNotImplementedYet() {
-         // Todo: Add future test cases
+        // Todo: Add future test cases
     }
 }
