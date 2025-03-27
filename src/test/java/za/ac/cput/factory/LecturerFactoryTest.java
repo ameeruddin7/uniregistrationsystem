@@ -16,17 +16,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class  LecturerFactoryTest {
     private static Department department;
     private static List<Course> assignedCourses;
-    private static Lecturer l1;
-    private static Lecturer l2;
-
-    static {
-        department = new Department();
-        assignedCourses = new ArrayList<>();
-        assignedCourses.add(new Course("it101", "introductionToit"));
-
-                l1 = LecturerFactory.createLecturer("1001", "Tauriq", "Osman", "osmant@cput.ac.za", department, assignedCourses);
-        l2 = LecturerFactory.createLecturer("1004", "Saadiqah", "Hendricks", "hendrickss@cput.ac.za", department, assignedCourses);
-    }
+    private static Lecturer  l1 = LecturerFactory.createLecturer("1001", "Tauriq", "Osman",
+                                                                 "osmant@cput.ac.za", department, assignedCourses);
+    private static Lecturer l2 = LecturerFactory.createLecturer("1004", "Saadiqah", "Hendricks",
+                                                                "hendrickss@cput.ac.za", department, assignedCourses);
 
     @Test
     @Order(1)
