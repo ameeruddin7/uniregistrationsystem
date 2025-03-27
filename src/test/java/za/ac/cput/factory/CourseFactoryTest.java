@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CourseFactoryTest {
 
-    private static Course c1 = CourseFactory.createCourse("2023001", "Application Development", 50, null, null, null);
-    private static Course c2 = CourseFactory.createCourse("2023002", "Project Management", 40, null, null, null);
-    private static Course c3 = CourseFactory.createCourse("2023003", "Professional Communication", 30, null, null, null);
+    private static Course c1 = CourseFactory.createCourse("ADP", "Application Development", 50, null, null, null);
+    private static Course c2 = CourseFactory.createCourse("PRM", "Project Management", 40, null, null, null);
+    private static Course c3 = CourseFactory.createCourse("PFC", "Professional Communication", 30, null, null, null);
 
 
     @Test
