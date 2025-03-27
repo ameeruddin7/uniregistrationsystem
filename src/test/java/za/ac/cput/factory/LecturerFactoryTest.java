@@ -1,7 +1,3 @@
-//Name: Moegamat Tauriq
-//  Surname: Osman
-//  Student#: 230599125
-
 // Name: Moegamat Tauriq
 // Surname: Osman
 // Student#: 230599125
@@ -20,9 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LecturerFactoryTest {
     private static Department department;
     private static List<Course> assignedCourses;
-
-    Lecturer l1 = LecturerFactory.createLecturer("L01", "Tauriq", "Osman", "osmant@cput.ac.za", department, assignedCourses);
-    Lecturer l2 = LecturerFactory.createLecturer("L02", "Saadiqah", "Hendricks", "hendrickss@cput.ac.za", department, assignedCourses);
+    private static Lecturer  l1 = LecturerFactory.createLecturer("1001", "Tauriq", "Osman",
+                                                                 "osmant@cput.ac.za", department, assignedCourses);
+    private static Lecturer l2 = LecturerFactory.createLecturer("1004", "Saadiqah", "Hendricks","Hendrickss@cput.ac.za", department, assignedCourses);
 
     @Test
     @Order(1)
