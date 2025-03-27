@@ -1,6 +1,4 @@
-//name: Gabriel Martin 
-// surname: Kiewietz
-// Student no. : 230990703
+//Gabriel Martin Kiewietz 230990703
 
 package za.ac.cput.domain;
 
