@@ -2,5 +2,9 @@
 
 package za.ac.cput.repository;
 
-public interface ICourseRepository {
+import za.ac.cput.domain.Course;
+import java.util.List;
+
+public interface ICourseRepository extends IRepository<Course, String> {
+    List<Course> getAll();
 }

@@ -1,6 +1,6 @@
-//Donna-Lee Jordaan_230613152
-package za.ac.cput.domain;
+//Donna-Lee Jordaan 230613152
 
+package za.ac.cput.domain;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class Course {
     private List<Student> enrolledStudents;
 
 
-    private Course() {
+    public Course(String it101, String introductionToIt) {
     }
 
     private Course(Builder builder) {

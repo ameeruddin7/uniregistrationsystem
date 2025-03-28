@@ -1,5 +1,4 @@
-//230190839
-//ameeruddin arai
+//Ameeruddin Arai 230190839
 
 package za.ac.cput.repository;
 
@@ -13,7 +12,7 @@ public class DepartmentRepository implements IDepartmentRepository {
     private List<Department> departmentList;
 
     private DepartmentRepository() {
-        departmentList = new ArrayList<>();
+        departmentList = new ArrayList<Department>();
     }
 
     public static IDepartmentRepository getRepository() {

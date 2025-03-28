@@ -1,10 +1,10 @@
-  // Saadiqah Hendricks 221095136
+//Saadiqah Hendricks 221095136
 
 package za.ac.cput.factory;
 
-import za.ac.cput.domain.Course;
-import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Student;
+import za.ac.cput.domain.Department;
+import za.ac.cput.domain.Course;
 import java.util.List;
 
 public class StudentFactory {
@@ -19,7 +19,7 @@ public class StudentFactory {
             return null;
         }
 
-        // Email validation
+        // Simple email validation
         if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
             return null;
         }
@@ -34,3 +34,4 @@ public class StudentFactory {
                 .build();
     }
 }
+

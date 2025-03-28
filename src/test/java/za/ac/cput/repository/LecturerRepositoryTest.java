@@ -1,6 +1,4 @@
-//Name: Moegamat Tauriq
-//  Surname: Osman
-//  Student#: 230599125
+//Moegamat Tauriq Osman 230599125
 
 package za.ac.cput.repository;
 
@@ -12,9 +10,8 @@ import za.ac.cput.domain.Course;
 import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Lecturer;
 import za.ac.cput.factory.LecturerFactory;
-
+import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)

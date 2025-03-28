@@ -1,7 +1,4 @@
-//Name: Moegamat Tauriq
-//  Surname: Osman
-//  Student#: 230599125
-
+//Moegamat Tauriq Osman 230599125
 
 package za.ac.cput.repository;
 
