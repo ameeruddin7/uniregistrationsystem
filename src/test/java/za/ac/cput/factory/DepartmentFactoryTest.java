@@ -1,33 +1,29 @@
 //230190839
 //ameeruddin arai
 
-
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.*;
 import za.ac.cput.domain.Department;
 import za.ac.cput.domain.Course;
-
+import za.ac.cput.domain.Lecturer;
+import za.ac.cput.domain.Student;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
-
-
-
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DepartmentFactoryTest {
-    private static Department d1;
-    private static Department d2;
-    private static List<Course> departmentCourses;
 
-    @BeforeAll
-    public static void setUp() {
-        departmentCourses = new ArrayList<>();
-        d1 = DepartmentFactory.createDepartment("D001", "Computer Science", "Engineering", "Dr. Smith", departmentCourses);
-        d2 = DepartmentFactory.createDepartment("D002", "Information Technology", "Engineering", "Dr. Adams", departmentCourses);
-    }
+    private Department department;
+    private List<Course> addCourses;
+    private List<Lecturer> assignLecturer;
+    private List<Student> students;
+
+
+    Department d1 = DepartmentFactory.createDepartment("D001", "Computer Science", addCourses, assignLecturer, students);
+    Department d2 = DepartmentFactory.createDepartment("D002", "Information Technology", addCourses, assignLecturer, students);
+
 
     @Test
     @Order(1)
@@ -54,7 +50,6 @@ public class DepartmentFactoryTest {
     @Order(4)
     @Disabled
     public void testNotImplementedYet() {
-        // To do
+        // todo
     }
 }
-
